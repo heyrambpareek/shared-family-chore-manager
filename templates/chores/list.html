@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Chores</h1>
+  {% if is_adult %}
+    <p><a href="{% url 'chores:create' %}">Create chore</a> · <a href="{% url 'households:members' %}">Manage members</a></p>
+  {% endif %}
+  <ul>
+    {% for chore in series %}
+      <li>
+        {{ chore.title }} — assigned to {{ chore.assignee.user.username }}
+        {% if is_adult %}
+          <a href="{% url 'chores:edit' chore.pk %}">Edit</a>
+          <a href="{% url 'chores:delete' chore.pk %}">Delete</a>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>No chores yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

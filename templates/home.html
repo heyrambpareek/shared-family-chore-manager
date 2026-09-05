@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Shared Family Chore Manager</h1>
+  <p>Manage shared household chores with clear assignments and schedules.</p>
+  <p><a href="{% url 'accounts:register' %}">Create a household</a> or <a href="{% url 'accounts:login' %}">sign in</a>.</p>
+{% endblock %}

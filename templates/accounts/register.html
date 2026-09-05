@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Create household | Shared Family Chore Manager{% endblock %}
+
+{% block content %}
+  <h1>Create your household</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create household</button>
+  </form>
+  <p><a href="{% url 'accounts:login' %}">Already have an account?</a></p>
+{% endblock %}

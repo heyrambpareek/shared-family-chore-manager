@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Household members</h1>
+  <p><a href="{% url 'households:member-create' %}">Add member</a></p>
+  <ul>
+    {% for member in members %}
+      <li>{{ member.user.username }} ({{ member.get_role_display }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

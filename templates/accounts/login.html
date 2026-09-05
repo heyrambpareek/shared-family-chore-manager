@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Sign in | Shared Family Chore Manager{% endblock %}
+
+{% block content %}
+  <h1>Sign in</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign in</button>
+  </form>
+  <p><a href="{% url 'accounts:register' %}">Create a household account</a></p>
+{% endblock %}

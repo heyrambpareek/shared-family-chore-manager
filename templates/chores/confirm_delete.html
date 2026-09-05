@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete chore</h1>
+  <p>Stop scheduling “{{ series.title }}”?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete chore</button>
+  </form>
+  <p><a href="{% url 'chores:list' %}">Cancel</a></p>
+{% endblock %}
